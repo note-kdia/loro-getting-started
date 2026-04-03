@@ -2,10 +2,10 @@
 
 [Loro Tutorial](https://loro.dev/docs/tutorial/get_started)
 
-## Project
+## Run
 
 ```
-$ cargo install rust-script
-$ rust-script 01_getting_started/01_introduction.rs
+cargo run --bin 01_get_started_A_introduction
 ```
+
 
