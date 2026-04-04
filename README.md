@@ -5,7 +5,11 @@
 ## Run
 
 ```
-cargo run --bin 01_get_started_A_introduction
+cargo run --examples introduction
 ```
 
+## PoC
+
+- `examples/poc-lazy-load.rs`
+    - shallow snapshot をベースに、OpLog を遅延読み込みさせられるか
 
