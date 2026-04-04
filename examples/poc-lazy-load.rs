@@ -182,13 +182,16 @@ fn main() {
     println!("\n====== c. Full re-sync from server ======");
     let full_snapshot = server.export(ExportMode::Snapshot).unwrap();
     let peer_a_resynced = LoroDoc::new();
+    peer_b.import_batch(&[a2, a3, a4]).unwrap();
     peer_a_resynced.import(&full_snapshot).unwrap();
-    let result_c = peer_a_resynced.import(&b1);
     println!("server:          {}", server.get_text("text").to_string());
     println!(
         "peer_a_resynced: {}",
         peer_a_resynced.get_text("text").to_string()
     );
     println!("peer_b:          {}", peer_b.get_text("text").to_string());
-    println!("result: {:?}", result_c);
+
+    println!("\njson loro document for dubbging:");
+    let updates = server.export_json_updates(&VersionVector::default(), &server.oplog_vv());
+    println!("{}", serde_json::to_string(&updates).unwrap());
 }
