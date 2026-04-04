@@ -1,4 +1,4 @@
-// https://loro.dev/docs/tutorial/get_started#sync
+// https://loro.dev/docs/tutorial/loro_doc#basic-usage
 
 use loro::*;
 
